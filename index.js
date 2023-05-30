@@ -6,7 +6,7 @@ const { userRoute } = require("./Routes/UserRoute");
 
 const app = Express();
 
-const PORT = 8000
+
 
 app.use(Express.json())
 
@@ -15,11 +15,11 @@ app.use(cors())
 app.use("/",todoRoute)
 app.use("/",userRoute)
 
-app.listen(PORT, async() => {
+app.listen(8080, async() => {
     try{
         await connection;
         console.log("connected To DB successfully")
-        console.log(`Listen Port On ${PORT}`)
+        console.log(`Listen Port On 8080`)
     }
     catch(err){
         console.log("Error connect to DB")
